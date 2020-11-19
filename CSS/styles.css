@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@keyframes PopIn {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+@keyframes slideDown {
+    from {height: 0%;}
+    to {height: 10vh;
+        max-height: 150px}
+}
+
+@keyframes bladeIn {
+    from{right: -320px;}
+    to{right:320px}
+}
+
+@keyframes bladeOut {
+    from{right:320px;}
+    to{right:-320px;}
+}
+
+@keyframes moveToSelected {
+    from {left: 'auto';
+          bottom: 'auto'}
+    to   {left: 100px;
+        bottom: 100px} 
+}
+
+@keyframes shadowCreep {
+    from {box-shadow: none}
+    to {box-shadow: 2px 4px 10px 1px inset black;}
+}
+
+html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+header {
+    animation: slideDown 1.5s ease;
+    margin: 0px;
+    height: 10vh;
+    max-height: 150px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,29,29,1) 60%, rgba(0,0,0,1) 100%);
+    font-size: 1.5rem;
+    font-family: 'Comfortaa', cursive;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+header li {
+    width: 20vw;
+    height: 50%;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    padding: 0%;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    list-style-type: none;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    height: 100%;
+    text-decoration: none;
+    color: inherit
+}
+
+/*--Index Page Specific--*/
+
+#index-body {
+    background-color: rgb(15, 15, 15);
+    height: 100%;
+    width: 100%
+}
+.main {
+    opacity: 100%;
+    animation: PopIn 1.5s ease-in;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7903536414565826) 100%), 
+        url('../Images/mainBackground.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.main-menu {
+    animation: PopIn 2.5s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: calc(100%/3);
+    border-right-style: solid;
+    border-right-color:whitesmoke;
+    border-right-width: 1px;
+}
+.shade {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgb(243,243,243);
+    background: radial-gradient(circle, rgba(243,243,243,0) 0%, rgba(255,255,255,0.16290266106442575) 2%, rgba(0,0,0,0.47942927170868344) 100%);
+}
+
+.main-menu img{
+    opacity: 0;
+    z-index: 1;
+    max-height: 250px;
+    width: auto;
+}
+
+.main-menu:hover {
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.main-menu:hover img {
+    opacity: 1;
+    transition: 1s  cubic-bezier(0.25, 0.46, 0.45, 0.94) 
+}
+
+.main-menu:hover .shade {
+    opacity: 1;
+    transition: .5s all ease; 
+}
+
+.menu-text {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    right: 0px;
+}
+
+.main .main-menu:last-child {
+    border-right: none;
+}
+
+.menu-text {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    color: whitesmoke
+}
+
+
+
+
+/*--Gallery Page Specific--*/
+
+#gallery {
+    animation: PopIn 1.5s ease-in;
+    background-color: rgb(41, 41, 41)
+}
+
+.gallery-body {
+    justify-content: center;
+   
+}
+
+.image-container {
+    display: flex;
+    margin: 20px;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    
+}
+
+.gallery-img {
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fefefe00;
+    margin: auto;
+    
+}
+
+.gallery-img:hover {
+    cursor: pointer;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+.modal-content {
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+.small-img {
+    border: 3px solid rgb(177, 177, 177);
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+
+.small-img:hover {
+    cursor: zoom-in;
+}
+
+.large-img {
+    height: auto;
+    width: auto;
+}
+.large-img:hover {
+    cursor: zoom-out;
+}
+
+/*--Commission Page Specific--*/
+.commission-body {
+    animation: PopIn 1.5s ease-in;
+    background-color: rgb(41, 41, 41);
+    color: whitesmoke;
+}
+
+.selector-wrapper {
+    max-width: 100vw;
+}
+
+.selected-item-wrapper{
+    background-image: url('../Images/Backgrounds/backgroundNoise.png');
+    height: 80vh;
+    width: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    border-left: none;
+    box-shadow: 5px 10px 30px 1px black;
+}
+
+.selected-item-wrapper p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.selected-item {
+    position: absolute;
+    margin-left: 45px;
+    top: calc(40vh - 2px);
+    height: 302px;
+    width: 202px;
+    background-color: rgb(179, 179, 179);
+    border-width: 1px;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px 1px inset black;
+}
+
+.selected-item-shadow {
+    display: none;
+    position: absolute;
+    margin-left: 45px;
+    top: calc(40vh - 2px);
+    height: 302px;
+    width: 202px;
+    border-width: 1px;
+    border-style: ridge;
+    border-color: rgba(245, 245, 245, 0);
+    border-radius: 5px;
+    z-index: 10;
+    animation: shadowCreep 500ms ease-out;
+    box-shadow: 2px 4px 10px 1px inset black;
+}
+
+.line-container, .line-wrapper, .color-container, .color-wrapper, .form-wrapper {
+    display: none;
+    height: 0px;
+    overflow: hidden;
+}
+.style-wrapper, .form-wrapper {
+    margin: 0 auto;
+    width: calc(100% - 302px);
+}
+
+.style-container, .line-container, .color-container{
+    margin: 0 auto;
+    width: calc(100% - 302px);
+    position: absolute;
+}
+
+.form-content {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+}
+
+.text-input {
+    width: 100%;
+    margin: 10px;
+}
+.text-input input {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+
+.number-input {
+    font-family: 'Poppins', sans-serif;
+    width: auto;
+    margin: 10px;
+}
+
+.personal-info, .characters-names {
+    margin: 0 auto;
+    width: 75%
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    height: 200px;
+    width: 400px
+}
+
+.submit-btn {
+    height: 35px;
+    width: 150px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+}
+
+.submit-btn:active {
+    box-shadow: -1px -2px 10px inset black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.style-title, .line-title, .color-title, .details-title {
+    margin-left: 300px;
+    width: calc(100% - 302px);
+    text-align: center;
+}
+
+.line-title, .color-title, .details-title {
+    display: none;
+}
+
+.style-container img, .line-container img, .color-container img {
+    width:200px;
+    height:300px;
+    border-radius: 5px;
+}
+
+.style-img:hover, .line-img:hover, .color-img:hover {
+    cursor: pointer;
+    
+}
+
+.style-img p, .line-container p, .color-container p {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+/*Comic List Specific*/
+
+#comic-list {
+    color: whitesmoke;
+    animation: PopIn 1.5s ease-in;
+    background-color: rgb(41, 41, 41)
+}
+
+.comic-img {
+    margin: 20px;
+    max-width: 400px;
+    min-width: 200px;
+    max-height: 400px;
+    min-height: 200px;
+    height: 30vw;
+    width: 30vw;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fefefe00;
+}
+
+.comic-img:hover {
+    cursor: pointer;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.comic-blade {
+    white-space: nowrap;
+    transition: all 1s ease;
+    position: absolute;
+    overflow: hidden;
+    background-image: url('../Images/Backgrounds/backgroundNoise.png');
+    top: 10vh;
+    width: 0px;
+    height: 89vh;
+}
+
+.blade-title-wrapper {
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+    white-space: normal;
+    border-bottom: whitesmoke 2px solid;
+}
+
+.title-img img {
+    max-width: 150px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    
+}
+
+.title-txt {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.blade-list {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.blade-list li {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    height: 2rem;
+    list-style: none;
+    border-bottom: 1px solid whitesmoke;
+}
+
+
+.blade-list li:hover {
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.281);
+}
+
+.bladeIn {
+    width: 320px;
+    right: 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: whitesmoke;
+    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+}
+
+.bladeOut{
+    width: 0px;
+    right: 0px;
+    border: none;
+}
+
+
+
+
+
+
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/*--Media Queries--*/
+
+@media (max-width: 1000px) {
+
+    header {
+        max-height: none;
+    }
+
+/*--Comic Page--*/
+
+    .comic-list-wrapper {
+        justify-content: center;
+    }
+
+    .comic-img {
+        max-height: none;
+        max-width: none;
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .bladeIn{
+        width: 90vw;
+        right: 5vw;
+        border-style: solid;
+        border-width: 2px;
+        border-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    .blade-title-wrapper {
+        max-height: none;
+        height: 25vh;
+    }
+
+    .title-img img {
+        max-width: none;
+        max-height: none;
+        width: 25vh;
+        height: 25vh;
+    }
+
+    .title-txt {
+        font-size: 3rem;
+    }
+}
