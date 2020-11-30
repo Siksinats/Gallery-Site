@@ -261,15 +261,11 @@ li a {
 }
 
 .selected-item-wrapper{
-    background-image: url('../Images/Backgrounds/backgroundNoise.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 80vh;
     width: 300px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: whitesmoke;
-    border-radius: 5px;
-    border-left: none;
-    box-shadow: 5px 10px 30px 1px black;
 }
 
 .selected-item-wrapper p {
@@ -278,7 +274,6 @@ li a {
 }
 
 .selected-item {
-    position: absolute;
     margin-left: 45px;
     top: calc(40vh - 2px);
     height: 302px;
@@ -307,11 +302,60 @@ li a {
     box-shadow: 2px 4px 10px 1px inset black;
 }
 
-.line-container, .line-wrapper, .color-container, .color-wrapper, .form-wrapper {
+#details {
+    display: none;
+}
+
+#basic h2{
+margin: 5px 0px;
+}
+
+#basic label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    width: 750px;
+    border: solid whitesmoke 1px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    padding: 15px
+
+}
+
+#basic label:hover {
+    cursor: pointer;
+}
+
+#basic input[type=radio] {
     display: none;
     height: 0px;
-    overflow: hidden;
+    width: 0px;
 }
+
+#style {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.selected {
+    background-color: rgba(245, 245, 245, 0.247);
+}
+.reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 16px;
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+
+input[type=radio]:checked ~ .reveal-if-active{
+    max-height: 500px;
+    opacity: 1;
+    overflow: visible;
+}
+
 .style-wrapper, .form-wrapper {
     margin: 0 auto;
     width: calc(100% - 302px);
@@ -372,32 +416,6 @@ textarea {
     box-shadow: -1px -2px 10px inset black;
     background-color: whitesmoke;
     border-radius: 5px;
-}
-
-.style-title, .line-title, .color-title, .details-title {
-    margin-left: 300px;
-    width: calc(100% - 302px);
-    text-align: center;
-}
-
-.line-title, .color-title, .details-title {
-    display: none;
-}
-
-.style-container img, .line-container img, .color-container img {
-    width:200px;
-    height:300px;
-    border-radius: 5px;
-}
-
-.style-img:hover, .line-img:hover, .color-img:hover {
-    cursor: pointer;
-    
-}
-
-.style-img p, .line-container p, .color-container p {
-    text-align: center;
-    margin-bottom: 0px;
 }
 
 /*Comic List Specific*/

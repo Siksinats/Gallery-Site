@@ -23,28 +23,107 @@
 
 <body class='commission-body'>
 
-  <h2 class='details-title'>Character Details</h2>
-  <h2 class='color-title'>Coloring</h2>
-  <h2 class='line-title'>Line-Work</h2>
-  <h2 class='style-title'>Style</h2>
-  
-
-
   <div class='selector-wrapper flex-container-row'>
 
     <div class='selected-item-wrapper'>
-      <p>Preview</p>
+      <p>Example</p>
       <div class='selected-item-shadow'></div>
       <div class='selected-item'></div>
     </div>
 
-    <div class='form-wrapper'>
+    <div id='basic' class='form-wrapper'>
+      <div id="style" class= "flex-container-column">
+        <h2>Style</h2>
+        <div>
+          <label class='style-label' for='chibi-style'>Chibi</label>
+          <input type="radio" id='chibi-style' name='style'value="Chibi">
+          
+          <div class='reveal-if-active'>
+            <h2>Color</h2>
+            
+            <label for='chibi-none' class='chibi-color-label'>None</label>
+            <input type="radio" id='chibi-none' name='chibi-coloring'value="none">
+
+            <label for='chibi-flat' class='chibi-color-label'> Flat</label>
+            <input type="radio" id='chibi-flat' name='chibi-coloring'value="flat">
+            
+            <label for='chibi-full' class='chibi-color-label'>Full</label>
+            <input type="radio" id='chibi-full' name='chibi-coloring'value="full">
+          
+          </div>
+        </div>
+        
+        
+        <label class='style-label' for='standard-style'>Standard</label>
+        <input type="radio" id='standard-style' name='style' value="Standard">
+
+        <div class='reveal-if-active'>
+          <h2>Size</h2>
+          <div>
+            <label class='size-label' for='standard-head'>Head</label>
+            <input type="radio" id='standard-head' name='size' value='head'>
+
+            <div class='reveal-if-active'>
+              <h2>Color</h2>
+
+              <label class='standard-color-label' for='standard-head-none'>None</label>
+              <input type="radio" id='standard-head-none' name='color' value='none'>
+  
+              <label class='standard-color-label' for='standard-head-flat'>Flat</label>
+              <input type="radio" id='standard-head-flat' name='color' value='flat'>
+  
+              <label class='standard-color-label' for='standard-head-full'>Full</label>
+              <input type="radio" id='standard-head-full' name='color' value='full'>
+
+            </div>
+          </div>
+          
+          <div>
+            <label  class='size-label' for='standard-bust'>Bust</label>
+            <input type="radio" id='standard-bust' name='size' value='bust'>
+  
+              <div class='reveal-if-active'>
+                <h2>Color</h2>
+
+                <label class='standard-color-label' for='standard-bust-none'>None</label>
+                <input type="radio" id='standard-bust-none' name='color' value='none'>
+    
+                <label class='standard-color-label' for='standard-bust-flat'>Flat</label>
+                <input type="radio" id='standard-bust-flat' name='color' value='flat'>
+  
+                <label class='standard-color-label' for='standard-bust-full'>Full</label>
+                <input type="radio" id='standard-bust-full' name='color' value='full'>
+            </div>
+          </div>
+          
+          <div>
+            <label  class='size-label' for='standard-full'>Full Body</label>
+            <input type="radio" id='standard-full' name='size' value="full-body">
+  
+             <div class='reveal-if-active'>
+              <h2>Color</h2>
+
+              <label class='standard-color-label' for='standard-body-none'>None</label>
+              <input type="radio" id='standard-body-none' name='color' value='none'>
+  
+              <label class='standard-color-label' for='standard-body-flat'>Flat</label>
+              <input type="radio" id='standard-body-flat' name='color' value='flat'>
+  
+              <label class='standard-color-label' for='standard-body-full'>Full</label>
+              <input type="radio" id='standard-body-full' name='color' value='full'>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='details' class='form-wrapper'>
       <div class='form-content flex-container-column flex-around align-center'>
 
         <div class='personal-info flex-container-row flex-around'>
 
           <div class='text-input'>
-            <label for='client-name'>Your Name <br>
+            <label for='client-name'>Your Name<br>
               <input type="text" id='client-name'>
             </label>
           </div>
@@ -84,63 +163,6 @@
           <button class="submit-btn" type="submit">Contact Me</button>
         </div>
 
-      </div>
-    </div>
-  
-    <div class="color-wrapper">
-      <div class="color-container flex-container-row flex-around">
-  
-        <div class='color-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-        </div>
-    
-        <div class='color-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-        </div>
-    
-        <div class='color-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-          </div>
-  
-      </div>
-    </div>
-  
-    <div class="line-wrapper">
-      <div class="line-container flex-container-row flex-around">
-  
-        <div class='line-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-        </div>
-    
-        <div class='line-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-        </div>
-    
-        <div class='line-img'>
-          <img src='../Images/Commission Images/chibiStyle.jpg'>
-          <p>Chibi</p>
-          </div>
-  
-      </div>
-    </div>
-  
-    <div class='style-wrapper flex-container-row flex-around'>
-        <div class="style-container flex-container-row flex-around">
-  
-            <div class='style-img'>
-              <img src='../Images/Commission Images/chibiStyle.jpg'>
-              <p>Chibi</p>
-            </div>
-          
-            <div class='style-img'>
-              <img src='../Images/Commission Images/standardStyle.png'>
-              <p>Standard</p>
-            </div>
       </div>
     </div>
   </div>
