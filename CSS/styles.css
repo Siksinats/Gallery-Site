@@ -302,25 +302,31 @@ li a {
     box-shadow: 2px 4px 10px 1px inset black;
 }
 
-#details {
-    display: none;
+.details {
+    opacity: 0;
+    width: 0px;
+    pointer-events: none;
+}
+
+.basic {
+    width:75vw;
+    max-width: 850px;
 }
 
 #basic h2{
-margin: 5px 0px;
+    margin: 5px 0px;
 }
 
-#basic label {
+#basic label {  
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    width: 750px;
     border: solid whitesmoke 1px;
     border-radius: 5px;
     margin: 5px 0px;
-    padding: 15px
-
+    padding: 15px;
+    text-overflow: none;
 }
 
 #basic label:hover {
@@ -333,9 +339,8 @@ margin: 5px 0px;
     width: 0px;
 }
 
-#style {
+#style div {
     width: 100%;
-    margin: 0 auto;
 }
 
 .selected {
@@ -346,7 +351,7 @@ margin: 5px 0px;
     max-height: 0;
     overflow: hidden;
     font-size: 16px;
-    transform: scale(0.95);
+    transform:scale(.95);
     transition: 0.5s;
 }
 
@@ -356,21 +361,23 @@ input[type=radio]:checked ~ .reveal-if-active{
     overflow: visible;
 }
 
-.style-wrapper, .form-wrapper {
-    margin: 0 auto;
-    width: calc(100% - 302px);
-}
-
-.style-container, .line-container, .color-container{
-    margin: 0 auto;
-    width: calc(100% - 302px);
-    position: absolute;
-}
-
 .form-content {
     margin: 0 auto;
     width: 80%;
     height: 100%;
+}
+
+.transition-btn-wrapper {
+    width: 100%;
+}
+
+#next-btn {
+    float: right;
+    text-overflow: none;
+}
+
+#next-btn:hover {
+    cursor: pointer;
 }
 
 .text-input {
@@ -418,12 +425,36 @@ textarea {
     border-radius: 5px;
 }
 
+.fadeOutLeft {
+    transition: all .5s;
+    width: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+.fadeInRight {
+    transition: all .5s;
+    width:75vw;
+    opacity: 1;
+    pointer-events: all;
+    overflow: hidden;
+}
+
+#next-btn, #back-btn, .submit-btn {
+    border: whitesmoke 1px solid;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    color: whitesmoke;
+    background: linear-gradient(180deg, rgb(20, 20, 20) 0%, rgba(49,49,49,1) 60%, rgba(20,20,20,1) 100%);
+}
+
 /*Comic List Specific*/
 
 #comic-list {
     color: whitesmoke;
     animation: PopIn 1.5s ease-in;
     background-color: rgb(41, 41, 41)
+
 }
 
 .comic-img {

@@ -31,140 +31,148 @@
       <div class='selected-item'></div>
     </div>
 
-    <div id='basic' class='form-wrapper'>
-      <div id="style" class= "flex-container-column">
-        <h2>Style</h2>
-        <div>
-          <label class='style-label' for='chibi-style'>Chibi</label>
-          <input type="radio" id='chibi-style' name='style'value="Chibi">
-          
-          <div class='reveal-if-active'>
-            <h2>Color</h2>
-            
-            <label for='chibi-none' class='chibi-color-label'>None</label>
-            <input type="radio" id='chibi-none' name='chibi-coloring'value="none">
-
-            <label for='chibi-flat' class='chibi-color-label'> Flat</label>
-            <input type="radio" id='chibi-flat' name='chibi-coloring'value="flat">
-            
-            <label for='chibi-full' class='chibi-color-label'>Full</label>
-            <input type="radio" id='chibi-full' name='chibi-coloring'value="full">
-          
-          </div>
-        </div>
-        
-        
-        <label class='style-label' for='standard-style'>Standard</label>
-        <input type="radio" id='standard-style' name='style' value="Standard">
-
-        <div class='reveal-if-active'>
-          <h2>Size</h2>
+    <form id=form class='flex-container-row'>
+      <div id='basic' class='basic'>
+        <div id="style" class= "flex-container-column">
+          <h2>Style</h2>
           <div>
-            <label class='size-label' for='standard-head'>Head</label>
-            <input type="radio" id='standard-head' name='size' value='head'>
-
+            <label class='style-label' for='chibi-style'>Chibi</label>
+            <input type="radio" id='chibi-style' name='style'value="Chibi">
+            
             <div class='reveal-if-active'>
               <h2>Color</h2>
-
-              <label class='standard-color-label' for='standard-head-none'>None</label>
-              <input type="radio" id='standard-head-none' name='color' value='none'>
+              
+              <label for='chibi-none' class='chibi-color-label'>None</label>
+              <input type="radio" id='chibi-none' name='chibi-coloring'value="none">
   
-              <label class='standard-color-label' for='standard-head-flat'>Flat</label>
-              <input type="radio" id='standard-head-flat' name='color' value='flat'>
-  
-              <label class='standard-color-label' for='standard-head-full'>Full</label>
-              <input type="radio" id='standard-head-full' name='color' value='full'>
-
+              <label for='chibi-flat' class='chibi-color-label'> Flat</label>
+              <input type="radio" id='chibi-flat' name='chibi-coloring'value="flat">
+              
+              <label for='chibi-full' class='chibi-color-label'>Full</label>
+              <input type="radio" id='chibi-full' name='chibi-coloring'value="full">
+            
             </div>
           </div>
           
           <div>
-            <label  class='size-label' for='standard-bust'>Bust</label>
-            <input type="radio" id='standard-bust' name='size' value='bust'>
+            <label class='style-label' for='standard-style'>Standard</label>
+            <input type="radio" id='standard-style' name='style' value="Standard">
   
-              <div class='reveal-if-active'>
-                <h2>Color</h2>
-
-                <label class='standard-color-label' for='standard-bust-none'>None</label>
-                <input type="radio" id='standard-bust-none' name='color' value='none'>
+            <div class='reveal-if-active'>
+              <h2>Size</h2>
+              <div>
+                <label class='size-label' for='standard-head'>Head</label>
+                <input type="radio" id='standard-head' name='size' value='head'>
+  
+                <div class='reveal-if-active'>
+                  <h2>Color</h2>
+  
+                  <label class='standard-color-label' for='standard-head-none'>None</label>
+                  <input type="radio" id='standard-head-none' name='color' value='none'>
+      
+                  <label class='standard-color-label' for='standard-head-flat'>Flat</label>
+                  <input type="radio" id='standard-head-flat' name='color' value='flat'>
+      
+                  <label class='standard-color-label' for='standard-head-full'>Full</label>
+                  <input type="radio" id='standard-head-full' name='color' value='full'>
+  
+                </div>
+              </div>
+              
+              <div>
+                <label  class='size-label' for='standard-bust'>Bust</label>
+                <input type="radio" id='standard-bust' name='size' value='bust'>
+      
+                  <div class='reveal-if-active'>
+                    <h2>Color</h2>
+  
+                    <label class='standard-color-label' for='standard-bust-none'>None</label>
+                    <input type="radio" id='standard-bust-none' name='color' value='none'>
+        
+                    <label class='standard-color-label' for='standard-bust-flat'>Flat</label>
+                    <input type="radio" id='standard-bust-flat' name='color' value='flat'>
+      
+                    <label class='standard-color-label' for='standard-bust-full'>Full</label>
+                    <input type="radio" id='standard-bust-full' name='color' value='full'>
+                </div>
+              </div>
+              
+              <div>
+                <label  class='size-label' for='standard-full'>Full Body</label>
+                <input type="radio" id='standard-full' name='size' value="full-body">
+      
+                <div class='reveal-if-active'>
+                  <h2>Color</h2>
+  
+                  <label class='standard-color-label' for='standard-body-none'>None</label>
+                  <input type="radio" id='standard-body-none' name='color' value='none'>
+      
+                  <label class='standard-color-label' for='standard-body-flat'>Flat</label>
+                  <input type="radio" id='standard-body-flat' name='color' value='flat'>
+      
+                  <label class='standard-color-label' for='standard-body-full'>Full</label>
+                  <input type="radio" id='standard-body-full' name='color' value='full'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id='transition-btn-wrapper'>
+            <button id='next-btn' type='button'>Next &#8594</button>
+          </div>
+        </div>
+      </div>
+  
+      <div id='details' class='form-wrapper details'>
+        <div class='form-content flex-container-column flex-around align-center'>
+  
+          <div class='personal-info flex-container-row flex-around'>
+  
+            <div class='text-input'>
+              <label for='client-name'>Your Name<br>
+                <input type="text" id='client-name'>
+              </label>
+            </div>
+            
+            <div class='text-input'>
+              <label for='client-email'>Your Email <br>
+                <input type="email" id='client-email'>
+              </label>
+            </div>
+          </div>
+          
+          <div class='characters-names flex-container-row flex-around'>
+            <div class='number-input'>
+              <label for='amount'>Char. Count<br>
+                <input type="number" id="amount" min="1">
+              </label>
+            </div>
+            
+            <div class='text-input'>
+              <label for='character-name'>Character Names<br>
+                <input type='text' id='character-name' placeholder="Please seperate with a comma">
+              </label>
+            </div>
+            
+          </div>
+          
+  
+          <label for='description'>Describe Your Characters<br>
+            <textarea id='description' placeholder="Include any details that you think are important for me to know when drawing your character. For example, eye color, height, build, any items that they are wearing, ect."></textarea>
+          </label>
+  
+          <label for='special-requests'>Special Requests<br>
+            <textarea id='special-requests' placeholder="If you have any special requests that may not fall into character description, list them here. May affect pricing"></textarea>
+          </label>
+  
+          <div>
+            <button id="back-btn" type="button">&#8592 Back</button>
+            <button class="submit-btn" type='button'>Contact Me</button>
+          </div>
+  
+        </div>
+      </div>
+    </form>
     
-                <label class='standard-color-label' for='standard-bust-flat'>Flat</label>
-                <input type="radio" id='standard-bust-flat' name='color' value='flat'>
-  
-                <label class='standard-color-label' for='standard-bust-full'>Full</label>
-                <input type="radio" id='standard-bust-full' name='color' value='full'>
-            </div>
-          </div>
-          
-          <div>
-            <label  class='size-label' for='standard-full'>Full Body</label>
-            <input type="radio" id='standard-full' name='size' value="full-body">
-  
-             <div class='reveal-if-active'>
-              <h2>Color</h2>
-
-              <label class='standard-color-label' for='standard-body-none'>None</label>
-              <input type="radio" id='standard-body-none' name='color' value='none'>
-  
-              <label class='standard-color-label' for='standard-body-flat'>Flat</label>
-              <input type="radio" id='standard-body-flat' name='color' value='flat'>
-  
-              <label class='standard-color-label' for='standard-body-full'>Full</label>
-              <input type="radio" id='standard-body-full' name='color' value='full'>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id='details' class='form-wrapper'>
-      <div class='form-content flex-container-column flex-around align-center'>
-
-        <div class='personal-info flex-container-row flex-around'>
-
-          <div class='text-input'>
-            <label for='client-name'>Your Name<br>
-              <input type="text" id='client-name'>
-            </label>
-          </div>
-          
-          <div class='text-input'>
-            <label for='client-email'>Your Email <br>
-              <input type="email" id='client-email'>
-            </label>
-          </div>
-        </div>
-        
-        <div class='characters-names flex-container-row flex-around'>
-          <div class='number-input'>
-            <label for='amount'>Char. Count<br>
-              <input type="number" id="amount" min="1">
-            </label>
-          </div>
-          
-          <div class='text-input'>
-            <label for='character-name'>Character Names<br>
-              <input type='text' id='character-name' placeholder="Please seperate with a comma">
-            </label>
-          </div>
-          
-        </div>
-        
-
-        <label for='description'>Describe Your Characters<br>
-          <textarea id='description' placeholder="Include any details that you think are important for me to know when drawing your character. For example, eye color, height, build, any items that they are wearing, ect."></textarea>
-        </label>
-
-        <label for='special-requests'>Special Requests<br>
-          <textarea id='special-requests' placeholder="If you have any special requests that may not fall into character description, list them here. May affect pricing"></textarea>
-        </label>
-
-        <div>
-          <button class="submit-btn" type="submit">Contact Me</button>
-        </div>
-
-      </div>
-    </div>
   </div>
 
   

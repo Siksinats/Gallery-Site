@@ -204,6 +204,67 @@ $('.standard-color-label').each(function(index, value) {
     })
 })
 
+$('#next-btn').on('click', function() {
+    $('#basic').removeClass('fadeInRight')
+    $('#details').removeClass('fadeOutLeft')
+
+    $('#basic').addClass('fadeOutLeft')
+    $('#details').addClass('fadeInRight')
+})
+
+$('#back-btn').on('click', function() {
+
+    $('#basic').removeClass('fadeOutLeft')
+    $('#details').removeClass('fadeInRight')
+
+    $('#basic').addClass('fadeInRight')
+    $('#details').addClass('fadeOutLeft')
+})
+
+    $('.submit-btn').on('click', function() {
+      let email = 't.staniskis@gmail.com';
+      let subject = `${$("#client-name").val()} Commision Request`;
+
+      let style = $('input[name=style]:checked').val();
+      let size = function() {
+          if(style == 'Chibi') {
+              return 'Full Body'
+          } else {
+              let size = $('input[name=size]:checked').val()
+              return size
+          }
+      }
+      let color= $('input[name=color]:checked').val()
+      let characterCount = $('#amount').val()
+      let characterNames = $('#character-name').val()
+      let description = $('#description').val()
+      let requests = $('#special-requests').val()
+      console.log(style)
+      console.log(size())
+      console.log(color)
+      console.log(characterCount)
+      console.log(characterNames)
+      console.log(description)
+      console.log(requests)
+
+      
+      let emailBody = `Hello, my name is ${$("#client-name").val()} @ ${$('#client-email').val()}.
+      I would like to request the following...
+      
+      Style-${style} | Size-${size()} | Coloring-${color} | Character Count-${characterCount} | Character Names-${characterNames} |
+      
+      Description-${description} |
+      
+      Special Requests-${requests}
+      
+      Thank you!`;
+
+
+      document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody
+    })
+  
+
+
 
 
 
